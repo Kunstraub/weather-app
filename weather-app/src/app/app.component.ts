@@ -9,7 +9,7 @@ import { HttpClient  } from '@angular/common/http';
 export class AppComponent {
   title = 'weather-app';
   api_key = 'ba1253906c36446bb4eb9d74923a7f1d';
-  url = 'https://ipgeolocation.abstractapi.com/v1/?api_key=ba1253906c36446bb4eb9d74923a7f1d';
+  url = 'https://ipgeolocation.abstractapi.com/v1/?api_key='+this.api_key;
   ipAddress = '';
   city = '';
   region = '';
