@@ -14,11 +14,22 @@ export class AppComponent {
   city = '';
   region = '';
   country = '';
+  weather_api_key = '67bff4d8240443f29d3102829232805'
+  base_url = 'http://api.weatherapi.com/v1/current.json'
+  location = 'Cologne';
 
   constructor(private http: HttpClient){}
 
   ngOnInit() {
-    this.getGeolocationData();
+    // this.getGeolocationData();
+    this.getWeatherInformation();
+}
+
+getWeatherInformation(){
+  const url = `${this.base_url}?key=${this.weather_api_key}&q=${this.location}`;
+  this.http.get<any>(url).subscribe( response => {
+    console.log(response);
+  })
 }
 
 
